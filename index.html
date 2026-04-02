@@ -3,57 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Water Tank Controller</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>স্মার্ট ওয়াটার ট্যাংক কন্ট্রোলার</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Bengali -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="logo.png" alt="Smart Tank Logo">
-            </div>
-
-            <div class="nav-right">
-                <a href="#" class="app-btn">App</a>
-                <div class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
+    <header>
+        <nav>
+            <div class="logo">স্মার্ট ওয়াটার ট্যাংক কন্ট্রোলার [1]</div>
+            <ul>
+                <li><a href="#features">বৈশিষ্ট্য</a></li>
+                <li><a href="#app">অ্যাপ</a></li>
+                <li><a href="#faq">জিজ্ঞাসা</a></li>
+                <li><a href="#contact">যোগাযোগ</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero">
-        <div class="container">
-            <div class="hero-image">
-                <img src="hero-product.png" alt="Smart Tank System">
-            </div>
-            
-            <div class="hero-text">
-                <h1>স্মার্ট ওয়াটার ট্যাঙ্ক কন্ট্রোলার</h1>
-                <p>বাসা-বাড়ির পানি উত্তোলনে আধুনিক ও নির্ভরযোগ্য সমাধান</p>
-                <a href="#" class="btn-main">অর্ডার করুন</a>
-            </div>
-        </div>
+        <h1>স্মার্ট ওয়াটার ট্যাংক কন্ট্রোলার</h1>
+        <p>বাসা-বাড়ির পানি উত্তোলনে আধুনিক ও নির্ভরযোগ্য সমাধান [1]</p>
+        <button onclick="window.location.href='https://wa.me/8801881808680'">অর্ডার করতে ক্লিক করুন</button>
     </section>
 
-    <section class="feature-card">
-        <div class="container">
+    <section id="features" class="section">
+        <h2>মূল বৈশিষ্ট্যসমূহ</h2>
+        <div class="grid">
             <div class="card">
-                <img src="wifi-device.png" alt="WIFI Controller">
-                <h3>WIFI চালিত স্মার্ট কন্ট্রোলার</h3>
-                <p>বিশ্বের যেকোনো প্রান্ত থেকে আপনার পানির পাম্প নিয়ন্ত্রণ করুন খুব সহজেই।</p>
-                <a href="#" class="btn-green">বিস্তারিত দেখুন</a>
+                <h3>অটোমেটিক অন / অফ</h3>
+                <p>এটি অটোমেটিক পানির মটর চালু এবং বন্ধ করে যাতে পানির ট্যাংক কখনোই খালি না হয়। [1]</p>
+            </div>
+            <div class="card">
+                <h3>রিমুট কন্ট্রোল</h3>
+                <p>পৃথিবীর যেকোনও জায়গা থেকে ট্যাংকের পানির পরিমাণ দেখে পাম্প নিয়ন্ত্রণ করা যায়। [1]</p>
+            </div>
+            <div class="card">
+                <h3>বিদ্যুৎ সাশ্রয়</h3>
+                <p>পানির অপচয় রোধ করে এবং বাড়তি বিদ্যুৎ বিল থেকে আপনাকে মুক্তি দেয়। [2]</p>
+            </div>
+            <div class="card">
+                <h3>মটর সুরক্ষা</h3>
+                <p>কম ভোল্টেজে মটর নিরাপদ রাখে এবং কয়েল পুড়ে যাওয়া রোধ করে। [2, 3]</p>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <p>&copy; 2026 Smart Tank Controller. All rights reserved.</p>
-    </footer>
+    <section id="app" class="section light-bg">
+        <h2>স্মার্ট ওয়াটার ট্যাঙ্ক অ্যাপ</h2>
+        <p>আমাদের ফ্রী অ্যান্ড্রয়েড অ্যাপ ব্যবহার করে পানির পরিমাণ, পাম্পের সময় এবং বিদ্যুৎ বিল ট্র্যাক করতে পারবেন। [2, 3]</p>
+        <p>এটি ৯৯% নির্ভুলভাবে তথ্য প্রদান করে। [4]</p>
+    </section>
 
+    <section id="warranty" class="section">
+        <h2>ওয়ারেন্টি ও নিশ্চয়তা</h2>
+        <p>১ বছরের রিপ্লেসমেন্ট এবং ৯ বছরের সার্ভিস ওয়ারেন্টি (মোট ১০ বছর)। [4]</p>
+    </section>
+
+    <section id="faq" class="section light-bg">
+        <h2>সচরাচর জিজ্ঞাসা</h2>
+        <div class="faq-box">
+            <p><strong>প্রশ্ন: একাধিক ট্যাংক থাকলে কি হবে?</strong><br>
+            উত্তর: যদি ট্যাংকগুলো একসাথে পূর্ণ/খালি হয়, তবে একটি ডিভাইস ও একটি সেন্সরই যথেষ্ট। [4, 5]</p>
+            <p><strong>প্রশ্ন: ঢাকার বাইরে কিভাবে পাবো?</strong><br>
+            উত্তর: ঢাকার বাইরে ক্যাশ অন ডেলিভারিতে পাঠানো হয় এবং রিমোট সাপোর্ট দেওয়া হয়। [5, 6]</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>Roboidy HQ, Trishal Bazar, Mymensingh-2220 [7]</p>
+        <p>সেলস: 01881808680 | টেকনিক্যাল সাপোর্ট: 01946808680 [7]</p>
+        <p>&copy; 2024 Water Tank Controller. All rights reserved. [7]</p>
+    </footer>
 </body>
 </html>
