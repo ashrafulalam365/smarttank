@@ -5,68 +5,105 @@ body {
     color: #333;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
 header {
-    background: #007bff;
-    color: #fff;
-    padding: 1rem 0;
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+header .logo img {
+    height: 40px;
 }
 
-nav ul {
+header nav ul {
     list-style: none;
     display: flex;
 }
 
-nav ul li {
+header nav ul li {
     margin-left: 20px;
 }
 
-nav ul li a {
-    color: white;
+header nav ul li a {
+    color: #333;
     text-decoration: none;
 }
 
+/* Hero Section */
 .hero {
-    background: #e9ecef;
-    padding: 100px 20px;
+    background: #e9ecef; /* হালকা ধূসর ব্যাকগ্রাউন্ড */
+    padding: 100px 0;
     text-align: center;
 }
 
+.hero img {
+    max-width: 100%;
+}
+
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #007bff;
 }
 
+/* Buttons */
 .btn {
     display: inline-block;
-    background: #007bff;
-    color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
 }
 
-.features {
-    padding: 50px 20px;
+.btn-green {
+    background: #28a745;
+    color: white;
+}
+
+.btn-video {
+    background: white;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+/* Feature Cards */
+.feature-card {
+    padding: 50px 0;
     text-align: center;
 }
 
-.feature-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+.feature-card img {
+    max-width: 100%;
 }
 
-.item {
+.feature-card.white-bg {
+    background: #fff;
+}
+
+/* FAQ Section */
+.faq {
     background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
+    padding: 50px 0;
+}
+
+/* Footer */
+footer {
+    background: #343a40;
+    color: #fff;
+    padding: 50px 0;
+}
+
+footer img {
+    height: 40px;
+}
+
+footer .social-links a {
+    color: #fff;
+    margin-right: 20px;
 }
