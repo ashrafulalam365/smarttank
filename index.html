@@ -3,152 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>স্মার্ট ওয়াটার ট্যাংক কন্ট্রোলার</title>
-    <!-- Google Fonts for Bengali -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Hind Siliguri', sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: #333;
-        }
-        header {
-            background: #004a99;
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            max-width: 1200px;
-            margin: auto;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-        nav ul li { margin-left: 20px; }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .hero {
-            background: #eef2f7;
-            text-align: center;
-            padding: 80px 20px;
-        }
-        .hero h1 { font-size: 2.5rem; color: #004a99; }
-        .section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 50px 20px;
-            text-align: center;
-        }
-        .light-bg { background-color: #f9f9f9; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .card {
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: white;
-        }
-        .btn {
-            background: #28a745;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            text-decoration: none;
-            display: inline-block;
-        }
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-        }
-        .faq-box { text-align: left; max-width: 700px; margin: auto; }
-    </style>
+    <title>স্মার্ট ওয়াটার ট্যাংক কন্ট্রোলার</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">স্মার্ট ওয়াটার ট্যাংক কন্ট্রোলার</div>
-            <ul>
-                <li><a href="#features">বৈশিষ্ট্য</a></li>
-                <li><a href="#app">অ্যাপ</a></li>
-                <li><a href="#faq">জিজ্ঞাসা</a></li>
-                <li><a href="#contact">যোগাযোগ</a></li>
-            </ul>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span>মেনু</span>
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-item active">Item 1</a>
+            <a href="#" class="sidebar-item">Item 2</a>
+            <a href="#" class="sidebar-item">Item 3</a>
         </nav>
+    </aside>
+
+    <!-- Top Header -->
+    <header>
+        <div class="header-inner">
+            <div class="header-left">
+                <button class="hamburger" onclick="openSidebar()">☰</button>
+                <div class="logo-wrap">
+                    <div class="logo-icon">💧</div>
+                    <div class="logo-text">
+                        <span class="logo-main">Smart Tank</span>
+                        <span class="logo-sub">WATER TANK CONTROLLER</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <a href="#app" class="app-btn">App</a>
+                <nav class="desktop-nav">
+                    <a href="#features">বৈশিষ্ট্য</a>
+                    <a href="#warranty">ওয়ারেন্টি</a>
+                    <a href="#faq">জিজ্ঞাসা</a>
+                    <a href="#contact">যোগাযোগ</a>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>স্মার্ট ওয়াটার ট্যাংক কন্ট্রোলার</h1>
-        <p>বাসা-বাড়ির পানি উত্তোলনে আধুনিক ও নির্ভরযোগ্য সমাধান [1]</p>
-        <a href="https://wa.me/8801729418054" class="btn">অর্ডার করতে মেসেজ দিন</a>
-    </section>
+    <!-- Main Content -->
+    <main>
 
-    <section id="features" class="section">
-        <h2>মূল বৈশিষ্ট্যসমূহ</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>অটোমেটিক অন / অফ</h3>
-                <p>মটর অটোমেটিক চালু ও বন্ধ করে যাতে ট্যাংক কখনোই খালি না হয় [1]।</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>স্মার্ট ওয়াটার ট্যাংক কন্ট্রোলার</h1>
+                <p>বাসা-বাড়ির পানি উত্তোলনে আধুনিক ও নির্ভরযোগ্য সমাধান</p>
+                <a href="https://wa.me/8801729418054" class="btn-primary">অর্ডার করতে মেসেজ দিন</a>
             </div>
-            <div class="card">
-                <h3>রিমুট কন্ট্রোল</h3>
-                <p>পৃথিবীর যেকোনও জায়গা থেকে পানির পরিমাণ দেখে পাম্প নিয়ন্ত্রণ করা যায় [1]。</p>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="section">
+            <div class="section-inner">
+                <h2>মূল বৈশিষ্ট্যসমূহ</h2>
+                <div class="grid-4">
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h3>অটোমেটিক অন / অফ</h3>
+                        <p>মটর অটোমেটিক চালু ও বন্ধ করে যাতে ট্যাংক কখনোই খালি না হয়।</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📱</div>
+                        <h3>রিমোট কন্ট্রোল</h3>
+                        <p>পৃথিবীর যেকোনও জায়গা থেকে পানির পরিমাণ দেখে পাম্প নিয়ন্ত্রণ করা যায়।</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">💰</div>
+                        <h3>বিদ্যুৎ সাশ্রয়</h3>
+                        <p>পানির অপচয় রোধ করে এবং বিদ্যুৎ বিল সাশ্রয় করে।</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>মটর সুরক্ষা</h3>
+                        <p>কম ভোল্টেজে পানির পাম্প পুড়ে যাওয়া থেকে রক্ষা করে।</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h3>বিদ্যুৎ সাশ্রয়</h3>
-                <p>পানির অপচয় রোধ করে এবং বিদ্যুৎ বিল সাশ্রয় করে [2]。</p>
+        </section>
+
+        <!-- App Section -->
+        <section id="app" class="section light-bg">
+            <div class="section-inner">
+                <h2>স্মার্ট ওয়াটার ট্যাঙ্ক অ্যাপ</h2>
+                <p>আমাদের ফ্রী অ্যান্ড্রয়েড অ্যাপ ব্যবহার করে পানির পরিমাণ, পাম্পের সময় এবং বিদ্যুৎ বিল দেখতে পারবেন।</p>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/100px-2023_Facebook_icon.svg.png" alt="Facebook" />
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-link youtube">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/100px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube" />
+                        <span>YouTube</span>
+                    </a>
+                </div>
             </div>
-            <div class="card">
-                <h3>মটর সুরক্ষা</h3>
-                <p>কম ভোল্টেজে পানির পাম্প পুড়ে যাওয়া থেকে রক্ষা করে [3]。</p>
+        </section>
+
+        <!-- Warranty -->
+        <section id="warranty" class="section">
+            <div class="section-inner">
+                <h2>ওয়ারেন্টি ও নিশ্চয়তা</h2>
+                <p>১ বছরের রিপ্লেসমেন্ট এবং ৯ বছরের সার্ভিস ওয়ারেন্টি সহ মোট ১০ বছরের নিশ্চয়তা।</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="app" class="section light-bg">
-        <h2>স্মার্ট ওয়াটার ট্যাঙ্ক অ্যাপ</h2>
-        <p>আমাদের ফ্রী অ্যান্ড্রয়েড অ্যাপ ব্যবহার করে পানির পরিমাণ, পাম্পের সময় এবং বিদ্যুৎ বিল দেখতে পারবেন [2, 3]।</p>
-    </section>
+        <!-- FAQ -->
+        <section id="faq" class="section light-bg">
+            <div class="section-inner">
+                <h2>সচরাচর জিজ্ঞাসা</h2>
+                <div class="faq-box">
+                    <div class="faq-item">
+                        <p class="faq-q">প্রশ্ন: একাধিক ট্যাংক থাকলে কি হবে?</p>
+                        <p class="faq-a">উত্তর: যদি ট্যাংকগুলো একসাথে পূর্ণ ও খালি হয়, তবে একটি ডিভাইস ও সেন্সরই যথেষ্ট।</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">প্রশ্ন: কানেকশন কিভাবে দিব?</p>
+                        <p class="faq-a">উত্তর: ইলেকট্রিক্যাল কানেকশন দেওয়া খুবই সহজ। ভিডিও টিউটোরিয়াল দেখে বা আমাদের রিমোট সাপোর্টের মাধ্যমে এটি করতে পারবেন।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="warranty" class="section">
-        <h2>ওয়ারেন্টি ও নিশ্চয়তা</h2>
-        <p>১ বছরের রিপ্লেসমেন্ট এবং ৯ বছরের সার্ভিস ওয়ারেন্টি সহ মোট ১০ বছরের নিশ্চয়তা [4]。</p>
-    </section>
+    </main>
 
-    <section id="faq" class="section light-bg">
-        <h2>সচরাচর জিজ্ঞাসা</h2>
-        <div class="faq-box">
-            <p><strong>প্রশ্ন: একাধিক ট্যাংক থাকলে কি হবে?</strong><br>
-            উত্তর: যদি ট্যাংকগুলো একসাথে পূর্ণ ও খালি হয়, তবে একটি ডিভাইস ও সেন্সরই যথেষ্ট [4, 5]。</p>
-            <p><strong>প্রশ্ন: কানেকশন কিভাবে দিব?</strong><br>
-            উত্তর: ইলেকট্রিক্যাল কানেকশন দেওয়া খুবই সহজ। ভিডিও টিউটোরিয়াল দেখে বা আমাদের রিমোট সাপোর্টের মাধ্যমে এটি করতে পারবেন [6]。</p>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer id="contact">
-        <p>Kapasia, Gazipur- 1743 [7]</p>
-        <p>সেলস ও টেকনিক্যাল সাপোর্ট: 01729418054 [7]</p>
-        <p>&copy; 2024 Water Tank Controller. All rights reserved [7]。</p>
+        <div class="footer-inner">
+
+            <!-- Social -->
+            <div class="footer-col">
+                <h4>আমাদের অনুসরণ করুন</h4>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/100px-2023_Facebook_icon.svg.png" alt="Facebook" />
+                        Facebook
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/100px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube" />
+                        YouTube
+                    </a>
+                </div>
+            </div>
+
+            <!-- Terms & Policy -->
+            <div class="footer-col">
+                <h4>Terms &amp; Policy</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Terms &amp; condition</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Warranty Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Useful Links -->
+            <div class="footer-col">
+                <h4>Useful Link</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Track my order</a></li>
+                    <li><a href="#">Tutorial</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+
+            <!-- Address -->
+            <div class="footer-col">
+                <h4>Address</h4>
+                <p class="footer-addr">Kapasia, Gazipur- 1743</p>
+                <ul class="footer-contacts">
+                    <li>Sales &amp; Service: <a href="https://wa.me/8801881808680">01881808680</a> (WhatsApp)</li>
+                    <li>Technical Support: <a href="https://wa.me/8801946808680">01946808680</a> (WhatsApp)</li>
+                    <li>Complaint: <a href="https://wa.me/8801966808680">01966808680</a> (WhatsApp)</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Water Tank Controller. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        function openSidebar() {
+            document.getElementById('sidebar').classList.add('open');
+            document.getElementById('sidebarOverlay').classList.add('show');
+        }
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('sidebarOverlay').classList.remove('show');
+        }
+    </script>
 </body>
 </html>
