@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty Policy – Smart Tank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .policy-hero {
+            background: linear-gradient(135deg, #eef2f7 0%, #dde8f5 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        .policy-hero h1 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            color: var(--blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .policy-hero p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .policy-body {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 50px 24px 70px;
+        }
+
+        .policy-intro {
+            background: #eef4ff;
+            border-left: 4px solid var(--blue);
+            border-radius: 8px;
+            padding: 18px 22px;
+            color: var(--text);
+            font-size: 0.97rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        /* Warranty Banner */
+        .warranty-banner {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 44px;
+        }
+        .warranty-badge {
+            flex: 1;
+            min-width: 180px;
+            max-width: 240px;
+            background: var(--blue);
+            color: white;
+            border-radius: 14px;
+            padding: 24px 20px;
+            text-align: center;
+        }
+        .warranty-badge .badge-years {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--green);
+            line-height: 1;
+        }
+        .warranty-badge .badge-label {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.85);
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+        .warranty-badge.light {
+            background: #f0f7ff;
+            border: 2px solid #c5dbf5;
+        }
+        .warranty-badge.light .badge-years {
+            color: var(--blue);
+        }
+        .warranty-badge.light .badge-label {
+            color: var(--text-muted);
+        }
+
+        .policy-section {
+            margin-bottom: 40px;
+        }
+
+        .policy-section h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #dde8f5;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-section h2 .section-num {
+            background: var(--blue);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .policy-section h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 18px 0 8px;
+        }
+
+        .policy-section p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.85;
+            margin-bottom: 12px;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .policy-section ul li {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .policy-section ul li::before {
+            content: "•";
+            color: var(--green);
+            font-weight: 700;
+            position: absolute;
+            left: 4px;
+        }
+
+        /* Numbered steps */
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            counter-reset: step-counter;
+        }
+        .steps-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            line-height: 1.7;
+            counter-increment: step-counter;
+        }
+        .steps-list li::before {
+            content: counter(step-counter);
+            background: var(--blue);
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 700;
+            min-width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .highlight-box {
+            background: #fff8e1;
+            border-left: 4px solid #f5a623;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            font-size: 0.93rem;
+            color: var(--text);
+            line-height: 1.75;
+        }
+
+        .green-box {
+            background: #f0faf4;
+            border-left: 4px solid var(--green);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            font-size: 0.93rem;
+            color: var(--text);
+            line-height: 1.75;
+        }
+
+        /* Not covered tag */
+        .not-covered-list li::before {
+            content: "✕";
+            color: #e74c3c;
+            font-weight: 700;
+            position: absolute;
+            left: 2px;
+            font-size: 0.8rem;
+            top: 3px;
+        }
+
+        .policy-contact-box {
+            background: var(--blue);
+            color: white;
+            border-radius: 12px;
+            padding: 28px 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .policy-contact-box h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .policy-contact-box p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+        .policy-contact-box a {
+            color: var(--green);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .policy-contact-box a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span>মেনু</span>
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-item">Order Now</a>
+            <a href="privacy_policy.html" class="sidebar-item">Privacy Policy</a>
+            <a href="#contact" class="sidebar-item">Contact Us</a>
+        </nav>
+    </aside>
+
+    <!-- Top Header -->
+    <header>
+        <div class="header-inner">
+            <div class="header-left">
+                <button class="hamburger" onclick="openSidebar()">☰</button>
+                <a href="index.html" class="logo-wrap">
+                    <div class="logo-icon">💧</div>
+                    <div class="logo-text">
+                        <span class="logo-main">Smart Tank</span>
+                        <span class="logo-sub">WATER TANK CONTROLLER</span>
+                    </div>
+                </a>
+            </div>
+            <div class="header-right">
+                <a href="index.html#app" class="app-btn">App</a>
+                <nav class="desktop-nav">
+                    <a href="index.html#features">বৈশিষ্ট্য</a>
+                    <a href="index.html#warranty">ওয়ারেন্টি</a>
+                    <a href="index.html#faq">জিজ্ঞাসা</a>
+                    <a href="#contact">যোগাযোগ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="policy-hero">
+            <h1>Warranty Policy</h1>
+            <p>Last Updated: 07/02/2024</p>
+        </div>
+
+        <div class="policy-body">
+
+            <!-- Intro -->
+            <div class="policy-intro">
+                At <strong>Roboidy</strong>, we stand behind every product we make. This Warranty Policy outlines the coverage, conditions, and claim procedures applicable to our <strong>SmartTank Device</strong>. Our goal is to ensure you get the most out of your investment — with reliable after-sales support that lasts well beyond your purchase. This policy is governed in accordance with the laws of Bangladesh.
+            </div>
+
+            <!-- Warranty Overview Badges -->
+            <div class="warranty-banner">
+                <div class="warranty-badge">
+                    <div class="badge-years">10</div>
+                    <div class="badge-label">Years Total<br>Warranty Coverage</div>
+                </div>
+                <div class="warranty-badge light">
+                    <div class="badge-years">1</div>
+                    <div class="badge-label">Year Replacement<br>Warranty</div>
+                </div>
+                <div class="warranty-badge light">
+                    <div class="badge-years">9</div>
+                    <div class="badge-label">Years Service<br>Warranty</div>
+                </div>
+            </div>
+
+            <!-- Section 1 -->
+            <div class="policy-section">
+                <h2><span class="section-num">1</span> Products Covered Under Warranty</h2>
+                <p>This warranty applies exclusively to the <strong>SmartTank Device</strong> sold by Roboidy. The total warranty period is <strong>ten (10) years</strong> from the verified date of purchase, structured as follows:</p>
+
+                <h3>🔁 Year 1 — Replacement Warranty</h3>
+                <p>If the SmartTank Device develops any manufacturing defect within the first 12 months of purchase, you are entitled to a full unit replacement — either a brand-new or certified refurbished device — at no cost for the device itself.</p>
+
+                <h3>🔧 Years 2–10 — Service Warranty</h3>
+                <p>After the first year, your device is covered under our nine-year service warranty. During this period, Roboidy will provide free labour and servicing for any manufacturing-related faults. However, the cost of any replacement parts required during servicing will be borne by the customer.</p>
+
+                <div class="green-box">
+                    ✅ A combined 10-year warranty reflects our confidence in the SmartTank Device's build quality and long-term durability.
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="policy-section">
+                <h2><span class="section-num">2</span> Products NOT Covered Under Warranty</h2>
+                <p>The following items sold by Roboidy are <strong>not covered</strong> under any warranty and are sold on an "as-is" basis:</p>
+                <ul class="not-covered-list">
+                    <li>SmartTank Sensor</li>
+                    <li>SmartTank Cables</li>
+                    <li>Any other accessories, unless explicitly stated at the time of purchase</li>
+                </ul>
+                <div class="highlight-box">
+                    ⚠️ These items are not eligible for replacement, repair, or refund under this Warranty Policy. Please check individual product listings for any applicable coverage.
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="policy-section">
+                <h2><span class="section-num">3</span> Warranty Conditions &amp; Claim Process</h2>
+                <p>To qualify for a warranty claim on your SmartTank Device, all of the following conditions must be satisfied:</p>
+                <ul>
+                    <li>The claim is submitted within the active warranty period</li>
+                    <li>A valid proof of purchase is provided (e.g., invoice, order confirmation, receipt)</li>
+                    <li>The device has been used strictly in accordance with the official user manual and guidelines</li>
+                    <li>The fault is clearly attributable to a manufacturing defect — not physical damage or misuse</li>
+                </ul>
+
+                <h3>How to Submit a Warranty Claim</h3>
+                <ol class="steps-list">
+                    <li>Contact our customer support team via WhatsApp, email, or phone with your proof of purchase and a clear description of the problem.</li>
+                    <li>Our technical team will guide you through a remote troubleshooting session to accurately diagnose the issue.</li>
+                    <li>If the defect is confirmed to be covered under warranty, we will provide instructions for returning or dispatching the device for service.</li>
+                    <li>For claims within the first year, a replacement unit (new or refurbished) will be issued at no charge.</li>
+                    <li>For service claims in years 2–10, Roboidy will carry out free servicing; however, any required parts will be charged to the customer.</li>
+                    <li>Shipping, packaging, and handling costs associated with sending the device for warranty service are the customer's responsibility.</li>
+                </ol>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="policy-section">
+                <h2><span class="section-num">4</span> Exclusions from Warranty Coverage</h2>
+                <p>This warranty does not apply to any damage, malfunction, or defect caused by the following:</p>
+                <ul class="not-covered-list">
+                    <li>Accidents, physical impacts, misuse, negligence, or deliberate damage</li>
+                    <li>Improper installation, maintenance, or operation outside of our stated guidelines</li>
+                    <li>Unauthorized modifications, disassembly, or repairs by unapproved third parties</li>
+                    <li>Connection to incorrect voltage supply or use of incompatible accessories or components</li>
+                    <li>Damage resulting from natural events such as floods, lightning strikes, fire, or other acts of nature</li>
+                    <li>General wear and tear, cosmetic deterioration, or surface corrosion over time</li>
+                    <li>Use of the device outside the specified environmental and operational parameters</li>
+                </ul>
+                <div class="highlight-box">
+                    ⚠️ Any evidence of tampering or unauthorized repair will automatically void the warranty on the affected device.
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="policy-section">
+                <h2><span class="section-num">5</span> Support &amp; Servicing</h2>
+
+                <h3>🆓 Free Remote Support</h3>
+                <p>Roboidy offers complimentary remote troubleshooting and technical assistance via <strong>WhatsApp, Messenger, and phone calls</strong>. This support is available during official office hours and covers initial diagnosis, configuration help, and general usage guidance.</p>
+
+                <h3>🏠 On-Site Service Visits</h3>
+                <p>If an issue cannot be resolved remotely and requires a technician to visit your location, a service call charge will apply. Our team will clearly communicate the applicable fee before scheduling any visit — there are no surprise charges.</p>
+
+                <div class="green-box">
+                    💬 We encourage all customers to start with remote support, as most issues can be resolved quickly without the need for a physical visit.
+                </div>
+            </div>
+
+            <!-- Section 6 -->
+            <div class="policy-section">
+                <h2><span class="section-num">6</span> Limitation of Liability</h2>
+                <p>In accordance with the laws of Bangladesh, Roboidy's total liability under this warranty is strictly limited to the repair or replacement of the defective <strong>SmartTank Device</strong> as described in this policy.</p>
+                <p>Roboidy shall not be held liable for any incidental, indirect, consequential, or special damages arising from the use or inability to use the product — including but not limited to loss of data, loss of income, or any secondary damages caused by device failure.</p>
+            </div>
+
+            <!-- Contact Box -->
+            <div class="policy-contact-box">
+                <h2>Need Help with a Warranty Claim?</h2>
+                <p>Our support team is ready to assist you. Reach out through any of the channels below:</p>
+                <p><a href="mailto:roboidyteam@gmail.com">roboidyteam@gmail.com</a></p>
+                <p><a href="https://wa.me/8801729418054">WhatsApp: 01729418054</a></p>
+                <br>
+                <p style="font-size:0.82rem; color:rgba(255,255,255,0.55);">© 2024 Roboidy. All rights reserved. Water Tank Controller is a product of Roboidy.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-inner">
+
+            <div class="footer-col">
+                <h4>আমাদের অনুসরণ করুন</h4>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61573326503842" target="_blank" class="footer-social-link">
+                        <img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" alt="Facebook" width="24" height="24" />
+                        Facebook
+                    </a>
+                    <a href="https://youtube.com/@tubelitebd" target="_blank" class="footer-social-link">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" width="24" height="24" />
+                        YouTube
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Terms &amp; Policy</h4>
+                <ul class="footer-links">
+                    <li><a href="terms_condition.html">Terms &amp; condition</a></li>
+                    <li><a href="privacy_policy.html">Privacy policy</a></li>
+                    <li><a href="warranty_policy.html">Warranty Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Useful Link</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Track my order</a></li>
+                    <li><a href="#">Tutorial</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Address</h4>
+                <p class="footer-addr">Kapasia, Gazipur- 1743</p>
+                <ul class="footer-contacts">
+                    <li>Sales &amp; Service, Technical Support: <a href="https://wa.me/8801729418054">01729418054</a> (WhatsApp)</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Water Tank Controller. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openSidebar() {
+            document.getElementById('sidebar').classList.add('open');
+            document.getElementById('sidebarOverlay').classList.add('show');
+        }
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('sidebarOverlay').classList.remove('show');
+        }
+    </script>
+</body>
+</html>
